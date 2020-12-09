@@ -1,4 +1,4 @@
-<script src="runtime.acf0dec4155e77772545.js" defer></script><script src="polyfills.b8446be2de094270166c.js" defer></script><script src="scripts.a73844de5f291be94c3b.js" defer></script><script src="main.3763c7fa831e9250c578.js" defer></script><!doctype html>
+<script src="runtime.acf0dec4155e77772545.js" defer></script><script src="polyfills.b8446be2de094270166c.js" defer></script><script src="scripts.a73844de5f291be94c3b.js" defer></script><script src="main.76450ca6bd341794ffc4.js" defer></script><!doctype html>
 <html lang="en">
 
 <head>
@@ -8,11 +8,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+    <style type="text/css">
+            .pace .pace-activity {
+            top: 19px;
+            right: 19px;
+            display: none;
+        }
+        
+        .page-loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+            background: rgba(51, 51, 51, 1.00);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: -1;
+        }
+        
+        .loading-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 180px;
+            height: 180px;
+            margin-left: -120px;
+            margin-top: -120px;
+        }
+        
+        @media (max-width: 420px) {
+            .loading-icon {
+                width: 180px;
+                height: 180px;
+                margin-left: -90px;
+                margin-top: -120px;
+            }
+            app-root:empty~.page-loading {
+                opacity: 1;
+                z-index: 1;
+            }
+    </style>
 <link rel="stylesheet" href="styles.6af85669fc9abb604dda.css"></head>
 
 
 
 <app-root></app-root>
+<div class="page-loading">
+    <img src="/src/assets/img/spin2.gif" class="loading-icon" />
+</div>
 
 
 
