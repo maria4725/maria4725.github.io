@@ -9,12 +9,6 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <style type="text/css">
-            .pace .pace-activity {
-            top: 19px;
-            right: 19px;
-            display: none;
-        }
-        
         .page-loading {
             position: fixed;
             left: 0;
@@ -27,38 +21,114 @@
             transition: opacity 1s ease-in-out;
             z-index: -1;
         }
-        
-        .loading-icon {
-            position: absolute;
+
+        .loader {
+            position: relative;
+            width: 80px;
+            height: 80px;
             left: 50%;
             top: 50%;
-            width: 180px;
-            height: 180px;
-            margin-left: -120px;
-            margin-top: -120px;
+            margin-left: -70px;
+            margin-top: -70px;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
         }
-        
+
+        .loader-1 .loader-outter {
+            position: absolute;
+            border: 4px solid #fd8484;
+            border-left-color: transparent;
+            border-bottom: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            -webkit-animation: loader-1-outter 1s cubic-bezier(.42, .61, .58, .41) infinite;
+            animation: loader-1-outter 1s cubic-bezier(.42, .61, .58, .41) infinite;
+        }
+
+        .loader-1 .loader-inner {
+            position: absolute;
+            border: 4px solid #fda9a9;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            left: calc(50% - 20px);
+            top: calc(50% - 20px);
+            border-right: 0;
+            border-top-color: transparent;
+            -webkit-animation: loader-1-inner 1s cubic-bezier(.42, .61, .58, .41) infinite;
+            animation: loader-1-inner 1s cubic-bezier(.42, .61, .58, .41) infinite;
+        }
+
+        @-webkit-keyframes loader-1-outter {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes loader-1-outter {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes loader-1-inner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes loader-1-inner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+        }
+
         @media (max-width: 420px) {
-            .loading-icon {
-                width: 180px;
-                height: 180px;
-                margin-left: -90px;
+            .loader {
+                margin-left: -50px;
                 margin-top: -120px;
             }
-            app-root:empty~.page-loading {
-                opacity: 1;
-                z-index: 1;
-            }
+        }
+
+        app-root:empty~.page-loading {
+            opacity: 1;
+            z-index: 1;
+        }
     </style>
 <link rel="stylesheet" href="styles.6af85669fc9abb604dda.css"></head>
 
 
-
 <app-root></app-root>
 <div class="page-loading">
-    <img src="/src/assets/img/spin2.gif" class="loading-icon" />
-</div>
 
+
+    <div class="loader loader-1">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+    </div>
+</div>
 
 
 </html>
